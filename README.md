@@ -28,23 +28,23 @@
 	- Linux
 		- 脆弱性
 	- Unix（そのうち）
-- 権限昇格
+1. 権限昇格
 	- Windows
 	- Linux
 	- Unix（そのうち）
-- システム、ネットワークに関する情報収集
+1. システム、ネットワークに関する情報収集
 	- Windows
 	- Linux
 	- Unix（そのうち）
 	- Cloud(AWS, GCP等々からの情報収集)
-- ラテラルやポートフォワーディング（横に移る）
-- metasploit（これ一つで上のことをやる）
+1. ラテラルやポートフォワーディング（横に移る）
+1. metasploit（これ一つで上のことをやる）
 	- 情報収集
 	- リモートエクスプロイト
 	- 権限調査
 	- 権限昇格
 	- 対象システム・ネットワークの詳細情報収集
-- その他のmetasploitみたいに使える便利なツール群
+1. その他のmetasploitみたいに使える便利なツール群
 	- PowerShell Empire
 	- Cobalt Strike
 	- PoshC2
