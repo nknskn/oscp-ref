@@ -1,18 +1,23 @@
 # oscp-ref
 ## Methodology and Strategy for OSCP lab and exam
+
   1. Enumeration
     - Active(Any)
       1. Scan port
         - Quick and Deep
+
       2. Search each port
         - vulnerable version?
         - miss configuration?
         - joe account?
         - etc...
+
       3. Create the list of user and password
+        - Parse HTML
 
     - Passive(for Real world)
       - In the meantime
+
   2. Exploit to inside
     - Remote
 
