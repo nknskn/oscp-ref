@@ -1,50 +1,50 @@
 # oscp-ref
 ## Methodology and Strategy for OSCP lab and exam
 
-  1. Enumeration
-    - Active(Any)
-      1. Scan port
-        - Quick and Deep
+	1. Enumeration
+		- Active(Any)
+			1. Scan port
+				- Quick and Deep
 
-      2. Search each port
-        - vulnerable version?
-        - miss configuration?
-        - joe account?
-        - etc...
+			- Search each port
+				- vulnerable version?
+				- miss configuration?
+				- joe account?
+				- etc...
 
-      3. Create the list of user and password
-        - Parse HTML
+			- Create the list of user and password
+				- Parse HTML
 
-    - Passive(for Real world)
-      1. In the meantime
+		- Passive(for Real world)
+			- In the meantime
 
-  2. Exploit to inside
-    - Remote
+	- Exploit to inside
+		- Remote
 
-  3. Enumeration for Elevation
-    - Windows
-    - Linux
+	- Enumeration for Elevation
+		- Windows
+		- Linux
 
-  4. Elevation of Privileges
-    - Windows
-    - Linux
-    - Unix(for Real world)
-      - In the meantime
+	- Elevation of Privileges
+		- Windows
+		- Linux
+		- Unix(for Real world)
+			- In the meantime
 
-  5. Gathering the critical information
-    - Windows
-    - Linux
+	- Gathering the critical information
+		- Windows
+		- Linux
 
-  6. Port Forwarding to next machine...
+	- Port Forwarding to next machine...
 
-  7. Metasploit(Just one machine)
-    - enum
-    - exploit to inside
-    - enum for elevation
-    - elevation of privileges
-    - gathering the critical information
+	- Metasploit(Just one machine)
+		- enum
+		- exploit to inside
+		- enum for elevation
+		- elevation of privileges
+		- gathering the critical information
 
-  8. Other powerful tools like Metasploit
-    - Powershell Empire
-    - Cobalt Strike
+	- Other powerful tools like Metasploit
+		- Powershell Empire
+		- Cobalt Strike
 
