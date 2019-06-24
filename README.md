@@ -5,36 +5,36 @@
 			1. Scan port
 				- Quick and Deep
 
-			- Search each port
+			1. Search each port
 				- vulnerable version?
 				- miss configuration?
 				- joe account?
 				- etc...
-			- Create the list of user and password
+			1. Create the list of user and password
 				- Parse HTML
 		- Passive(for Real world)
 			- In the meantime
-	- Exploit to inside
+	1. Exploit to inside
 		- Remote
-	- Enumeration for Elevation
+	1. Enumeration for Elevation
 		- Windows
 		- Linux
-	- Elevation of Privileges
+	1. Elevation of Privileges
 		- Windows
 		- Linux
 		- Unix(for Real world)
 			- In the meantime
-	- Gathering the critical information
+	1. Gathering the critical information
 		- Windows
 		- Linux
-	- Port Forwarding to next machine...
-	- Metasploit(Just one machine)
+	1. Port Forwarding to next machine...
+	1. Metasploit(Just one machine)
 		- enum
 		- exploit to inside
 		- enum for elevation
 		- elevation of privileges
 		- gathering the critical information
-	- Other powerful tools like Metasploit
+	1. Other powerful tools like Metasploit
 		- Powershell Empire
 		- Cobalt Strike
 
