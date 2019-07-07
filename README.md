@@ -70,15 +70,15 @@
 		1. Cloud
 	- Passive(for Real world)
 		- In the meantime
-1. Exploit to inside(Remote Exploit)
+1. Remote Exploit
 	- Windows
 	- Linux
 	- Unix(In the meantime)
-1. Enumeration for Elevation
+1. System Enumeration
 	- Windows
 	- Linux
 	- Unix(In the meantime)
-1. Elevation of Privileges
+1. Privilege Escalation
 	- Windows
 	- Linux
 	- Unix(for Real world)
