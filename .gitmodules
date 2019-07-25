@@ -1,3 +1,6 @@
 [submodule "90_References/90_References/Checklists"]
 	path = 90_References/90_References/Checklists
 	url = https://github.com/netbiosX/Checklists/
+[submodule "90_References/Checklists"]
+	path = 90_References/Checklists
+	url = https://github.com/netbiosX/Checklists/
