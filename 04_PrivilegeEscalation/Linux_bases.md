@@ -6,7 +6,7 @@
   cat /etc/*-release
   uname -a
   hostname
-  
+
   # kernel and cpu type
   cat /proc/version
   uname -mrs
@@ -27,7 +27,7 @@
   cat ~/.bash_history
   cat ~/.nano_history
   cat ~/.atftp_history
-  cat ~/.mysql_history 
+  cat ~/.mysql_history
   cat ~/.php_history
   history
   env
@@ -66,13 +66,13 @@
   cat /var/mail/root
   ls -alh /var/spool/mail/
   cat /var/spool/mail/root
-  
+
   ls -ahlR /root/
   ls -ahlR /home/
-  
+
   cat /etc/shadow  # needs root
   cat /etc/sudoers # needs root
-  
+
   strings ./*.txt | grep password
   grep -l -i pass /var/log/*.log 2>/dev/null
   # searches for the string 'password' and output the line number
@@ -113,30 +113,30 @@
   cat /etc/inetd.conf  # List services managed by inetd
   ls -la /usr/sbin/in.*
   cat /etc/xinetd.conf # As above for xinetd
-  
+
   ls -alh /usr/bin/
   ls -alh /sbin/
   dpkg -l
   rpm -qa
   ls -alh /var/cache/apt/archivesO
   ls -alh /var/cache/yum/
-  
-  ls -alh /var/spool/lpd 
+
+  ls -alh /var/spool/lpd
   ls -alh /var/lib/pgsql
   ls -alh /var/lib/mysql
-  
+
   # Conf
-  cat /etc/syslog.conf 
+  cat /etc/syslog.conf
   cat /etc/chttp.conf
   cat /etc/lighttpd.conf
-  cat /etc/cups/cupsd.conf 
-  cat /etc/inetd.conf 
+  cat /etc/cups/cupsd.conf
+  cat /etc/inetd.conf
   cat /etc/apache2/apache2.conf
   cat /etc/my.conf
   cat /etc/httpd/conf/httpd.conf
   cat /opt/lampp/etc/httpd.conf
   ls -aRl /etc | awk '$1 ~ /^.*r.*/'
-  
+
   # Versions
   sudo -V
   httpd -v
@@ -147,7 +147,7 @@
   java -version
   python --version
   ruby -v
-  
+
   # Logs
   ls -alh /var/log/postgresql/
   ls -alh /var/log/proftpd/
@@ -162,7 +162,7 @@
   cat ~/.ssh/authorized_keys
   cat /etc/ssh/ssh_config
   cat /etc/ssh/sshd_config
-  
+
   mkdir -p /tmp/ssh_data/{local,server}
   cp ~/.ssh/* /tmp/ssh_data/local/
   cp /etc/ssh/* /tmp/ssh_data/server/
@@ -171,9 +171,9 @@
 - HTTP
   ~~~sh
   ls -alhR /var/www/
-  ls -alhR /srv/www/htdocs/ 
+  ls -alhR /srv/www/htdocs/
   ls -alhR /usr/local/www/apache22/data/
-  ls -alhR /opt/lampp/htdocs/ 
+  ls -alhR /opt/lampp/htdocs/
   ls -alhR /var/www/html/
   ~~~
 
@@ -203,7 +203,7 @@
   find / -name "*.log"
   which ${PROGRAMNAME}
   strings ./*.txt
-  
+
   # Interesting files
   find /home –name .rhosts -print 2>/dev/null   # Find rhost config files
   ls -ahlR /root/                               # list files recursively
@@ -211,10 +211,12 @@
   find /var/log -name "*.log" -type f -exec ls -la {} ; 2>/dev/null
   find /etc/ -maxdepth 1 -name .conf -type f -exec ls -la {} ; 2>/dev/null
   ls -la /etc/.conf
-  
+
   # For oscp lab
-  find / -name "network-secret.txt"
+  find / -type -f -name "network-secret.txt"
   locate "network-secret.txt"
+  find / -type -f -name "local.txt"
+  locate "local.txt"
   ~~~
 
 - Network
@@ -232,7 +234,7 @@
   iptables -L   # needs root
   cat /etc/services
   cat /var/lib/dhcp3/dhclient.leases
-  
+
   # tcpdump
   tcpdump tcp dst ${DESTIP} ${DESTPORT} and tcp dst ${DESTIP} ${DESTPORT}
   tcpdump -n dst host ${DESTIP} -vvv -n -w file.cap

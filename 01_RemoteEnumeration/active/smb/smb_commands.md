@@ -47,6 +47,11 @@ smbclient -L \\WIN7\IPC$ -I ${TARGET}
 smbclient '\\${TARGET}\<sharename>' -o user=${USER},pass=${PASS},workgroup=${GROUP}
 ~~~
 
+- Download folder
+~~~
+smbclient \\\\${TARGET}\\Backups -D {cd dir} -c "prompt;recurse;mget ${TARGET_DIR}"
+~~~
+
 ## on Windows
 - mount
 ~~~sh
